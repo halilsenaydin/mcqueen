@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>McQueen Teleop | Control Buzzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/mcqueen_teleop_buzzer.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Control Buzzer</h1>
+
+    <div
+      class="toggle-wrapper"
+      role="region"
+      aria-label="Buzzer on/off control"
+    >
+      <label class="toggle" aria-label="Buzzer On/Off Toggle">
+        <input type="checkbox" id="buzzer-toggle" />
+        <span class="slider"></span>
+      </label>
+      <div id="status-text" class="off" aria-live="polite" aria-atomic="true">
+        Buzzer Off
+      </div>
+    </div>
+
+    <a
+      href="{{ url_for('index') }}"
+      class="back-button"
+      role="button"
+      aria-label="Return to Pit Stop"
+      ><i class="fa-solid fa-chevron-left"></i> Return to Pit Stop</a
+    >
+
+    <script src="{{ url_for('static', filename='js/mcqueen_teleop_buzzer.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McQueen Teleop | Voice Assistant</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/mcqueen_teleop_voice_assistant.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/mcqueen_teleop_voice_assistant.css"
+    />
+  </head>
+  <body>
+    <div id="voiceDisplay"></div>
+
+    <div id="micContainer">
+      <div id="pulse"></div>
+      <div id="micButton">
+        <div id="planetAura"></div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/mcqueen_teleop_voice_assistant.js') }}"></script>
+  </body>
+</html>

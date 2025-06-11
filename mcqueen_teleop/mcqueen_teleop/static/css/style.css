@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient(to right, #b71c1c, #d32f2f);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    color: #ffb74d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.nav-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin: auto;
+    max-width: 900px;
+}
+
+.nav-card {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.6);
+    color: #ffb74d;
+    font-weight: 600;
+    padding: 2rem 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-card:hover {
+    background-color: #7b0000;
+    color: #fff;
+    transform: translateY(-8px);
+}
+
+.nav-card i {
+    color: #ffb74d;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-card:hover i {
+    color: #fff;
+}
+
+.nav-card span {
+    display: block;
+    font-size: 1.2rem;
+}

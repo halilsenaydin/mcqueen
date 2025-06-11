@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>McQueen Teleop | Control Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/mcqueen_teleop_screen.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Control Screen</h1>
+
+    <div class="screen-options" id="screen-options">
+      <div class="screen-card" data-id="0">
+        <img
+          src="{{ url_for('static', filename='img/opened.png') }}"
+          alt="Opened"
+        />
+        <span>Opened</span>
+      </div>
+      <div class="screen-card" data-id="2">
+        <img
+          src="{{ url_for('static', filename='img/opened-look-right.png') }}"
+          alt="Opened Look Right"
+        />
+        <span>Opened Look Right</span>
+      </div>
+      <div class="screen-card" data-id="3">
+        <img
+          src="{{ url_for('static', filename='img/opened-look-left.png') }}"
+          alt="Opened Look Left"
+        />
+        <span>Opened Look Left</span>
+      </div>
+      <div class="screen-card" data-id="1">
+        <img
+          src="{{ url_for('static', filename='img/blink.png') }}"
+          alt="Blink"
+        />
+        <span>Blink</span>
+      </div>
+      <div class="screen-card" data-id="4">
+        <img
+          src="{{ url_for('static', filename='img/blink-look-right.png') }}"
+          alt="Blink Look Right"
+        />
+        <span>Blink Look Right</span>
+      </div>
+      <div class="screen-card" data-id="5">
+        <img
+          src="{{ url_for('static', filename='img/blink-look-left.png') }}"
+          alt="Blink Look Left"
+        />
+        <span>Blink Look Left</span>
+      </div>
+    </div>
+
+    <div id="response-msg"></div>
+
+    <a
+      href="{{ url_for('index') }}"
+      class="back-button"
+      role="button"
+      aria-label="Return to Pit Stop"
+    >
+      <i class="fa-solid fa-chevron-left"></i> Return to Pit Stop</a
+    >
+
+    <script src="{{ url_for('static', filename='js/mcqueen_teleop_screen.js') }}"></script>
+  </body>
+</html>

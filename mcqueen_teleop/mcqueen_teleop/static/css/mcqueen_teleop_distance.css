@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(to right, #b71c1c, #d32f2f);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    color: #ffb74d;
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.table-container {
+    background-color: rgba(20, 20, 20, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 0 8px #ffb74d;
+    margin: 0 auto 4rem auto;
+    max-height: 400px;
+    max-width: 700px;
+    overflow-y: auto;
+}
+
+table {
+    background: rgba(20, 20, 20, 0.85);
+    border-collapse: collapse;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 183, 77, 0.7);
+    height: 500px;
+    margin: 0 auto;
+    max-height: 500px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+thead {
+    background-color: #7b0000;
+    position: sticky;
+    top: 0;
+}
+
+thead th {
+    color: #ffb74d;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    padding: 12px 18px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+tbody tr {
+    border-bottom: 1px solid #4a0000;
+    cursor: default;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 183, 77, 0.1);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 183, 77, 0.3);
+}
+
+tbody td {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px 18px;
+    text-shadow: 0 0 2px #000;
+}
+
+.back-button {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 20px;
+    color: #ffb74d;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.back-button:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 8px 20px #ffb74d;
+    color: #7b0000;
+}

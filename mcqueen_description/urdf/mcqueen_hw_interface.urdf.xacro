@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="mcqueen_hw_interface">
+
+    <xacro:property name="mqtt_url" value="tcp://localhost:1883"/>
+    <xacro:property name="mqtt_client_id" value="mcqueen_system"/>
+    <xacro:property name="mqtt_topic" value="motor/command"/>
+
+  <xacro:macro name="mcqueen_hw_interface" params="">
+
+    <ros2_control name="mcqueen_system" type="system">
+      <hardware>
+        <plugin>McQueenSystem</plugin>
+        <param name="comm.mqtt.url">${mqtt_url}</param>
+        <param name="sensor.motor.comm.client_id">${mqtt_client_id}</param>
+        <param name="sensor.motor.comm.target_topic_name">${mqtt_topic}</param>
+      </hardware>
+
+      <!-- Rear Wheels -->
+      <joint name="rear_left_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="rear_right_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <!-- Front Wheels -->
+      <joint name="front_left_wheel_joint">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+      </joint>
+      <joint name="front_right_wheel_joint">
+        <command_interface name="position"/>
+        <state_interface name="position"/>
+      </joint>
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>

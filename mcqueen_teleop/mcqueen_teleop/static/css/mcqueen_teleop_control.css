@@ -1,0 +1,322 @@
+body {
+  background: linear-gradient(to right, #b71c1c, #d32f2f);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  text-align: center;
+  user-select: none;
+}
+
+/* Pedals */
+.pedals {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#gas-pedal {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  touch-action: none;
+  user-select: none;
+}
+
+.gas-svg {
+  height: auto;
+  transition: transform 0.1s ease;
+  width: 80px;
+}
+
+#gas-pedal:active .gas-svg {
+  transform: scaleY(0.95);
+}
+
+/* Steering wheel */
+#steering-wheel-container {
+  cursor: grab;
+  filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.7));
+  height: 250px;
+  touch-action: none;
+  transition: filter 0.2s ease;
+  user-select: none;
+  width: 250px;
+}
+
+#steering-wheel-container:active {
+  cursor: grabbing;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.9));
+}
+
+svg {
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+}
+
+#steering-wheel-container,
+#gas-pedal {
+  touch-action: none;
+}
+
+/* Gearbox & Pedals */
+.gearbox-pedals {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Gearbox */
+.gearbox {
+  cursor: pointer;
+  height: 220px;
+  position: relative;
+  user-select: none;
+  width: 160px;
+}
+
+.gear-rail {
+  background: linear-gradient(to bottom, #555, #222);
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px #000;
+  height: 200px;
+  left: 50%;
+  position: absolute;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 20px;
+}
+
+.gear-handle {
+  align-items: center;
+  background: linear-gradient(to bottom, #9c27b0, #6a1b9a);
+  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  height: 60px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  transition: top 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  user-select: none;
+  width: 60px;
+}
+
+.gear-labels {
+  color: #bbb;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  height: 160px;
+  justify-content: space-between;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 30px;
+  transform: translateX(-50%);
+  user-select: none;
+  width: 100px;
+}
+
+.gear-labels-d {
+  position: relative;
+  top: -42px;
+}
+
+.gear-labels-r {
+  position: relative;
+  top: 36px;
+}
+
+/* McQueen Face */
+.control-panel {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.mcqueen-eyes {
+  align-items: center;
+  background: white;
+  border-radius: 80px;
+  border: 8px solid black;
+  box-shadow: inset 0 15px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: 250px;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+  width: 600px;
+}
+
+.mcqueen-eyes .eyes {
+  display: flex;
+  margin-top: 20px;
+}
+
+.mcqueen-eyes .eye {
+  align-items: center;
+  background: transparent;
+  display: flex;
+  height: 135px;
+  justify-content: center;
+  position: relative;
+  width: 135px;
+}
+
+.mcqueen-eyes .iris {
+  align-items: center;
+  background: #1976d2;
+  border-radius: 50%;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: absolute;
+  transition: transform 0.1s;
+  width: 80px;
+  z-index: 2;
+}
+
+.mcqueen-eyes .pupil {
+  background: black;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.mcqueen-eyes .eyelid {
+  height: 45%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mcqueen-eyes .eyelid .eyelid-left {
+  background: #b71c1c;
+  border-bottom: 4px solid black;
+  border-bottom-right-radius: 20px;
+  height: 70%;
+  left: 0;
+  position: relative;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 50%;
+  z-index: 3;
+}
+
+.mcqueen-eyes .eyelid .eyelid-right {
+  background: #b71c1c;
+  border-bottom: 4px solid black;
+  border-bottom-left-radius: 20px;
+  height: 65%;
+  right: 0;
+  position: absolute;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 50%;
+  z-index: 3;
+}
+
+.mcqueen-eyes.look-left .eye .iris {
+  transform: translateX(-50px);
+}
+
+.mcqueen-eyes.look-right .eye .iris {
+  transform: translateX(50px);
+}
+
+.mcqueen-eyes.look-left .eye .pupil {
+  transform: translateX(-10px);
+}
+
+.mcqueen-eyes.look-right .eye .pupil {
+  transform: translateX(10px);
+}
+
+.mcqueen-eyes.blink .eyelid-left,
+.mcqueen-eyes.blink .eyelid-right {
+  height: 100%;
+}
+
+.mcqueen-eyes .bottom-mask .rusteze-logo {
+  display: none;
+  width: 250px;
+}
+
+.mcqueen-eyes.blink .bottom-mask {
+  height: 35%;
+}
+
+.mcqueen-eyes.blink .bottom-mask .rusteze-logo {
+  display: inline;
+}
+
+.mcqueen-eyes .bottom-mask {
+  background: #b71c1c;
+  bottom: 0;
+  height: 30px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+}
+
+@media (max-width: 800px) {
+
+  /* Steering Wheel */
+  #steering-wheel-container {
+    height: 150px;
+    width: 150px;
+  }
+
+  /* Gearbox */
+  .gearbox {
+    height: 100px;
+    width: 60px;
+  }
+
+  .gear-rail {
+    height: 100px;
+    width: 15px;
+  }
+
+  .gear-handle {
+    height: 25px;
+    width: 25px;
+  }
+
+  .gear-labels {
+    height: 100px;
+    width: 60px;
+  }
+
+  .gear-labels-r {
+    top: 4px;
+  }
+
+  /* Gas Pedal */
+  .pedals button {
+    height: 100px;
+    width: 60px;
+  }
+
+  .gas-svg {
+    width: 50px;
+  }
+}

@@ -1,0 +1,2 @@
+recursive-include mcqueen_teleop/templates *
+recursive-include mcqueen_teleop/static *
