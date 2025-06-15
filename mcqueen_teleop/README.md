@@ -111,6 +111,8 @@ For security reasons, the microphone interface requires SSL/TLS encryption. You 
 To create these, run the following command in your terminal:
 
 ```bash
+cd ~/workspace
+
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
 ```
 
@@ -150,18 +152,32 @@ This will display real-time `geometry_msgs/msg/Twist` messages being sent from t
 
 ## Screenshots
 
+### Dashboard
+
 ![Dashboard](docs/img/1.png)
 
+### Voice Assistant
+
 ![Voice Assistant](docs/img/2.png)
+
+### Control Interface
 
 ![Control Interface 1](docs/img/3.png)
 
 ![Control Interface 2](docs/img/4.png)
 
+### Distance Monitor
+
 ![Distance Monitor](docs/img/5.png)
+
+### Control Buzzer
 
 ![Control Buzzer](docs/img/6.png)
 
+### Control Screen
+
 ![Control Screen](docs/img/7.png)
+
+### Control Headlight
 
 ![Control Headlight](docs/img/8.png)

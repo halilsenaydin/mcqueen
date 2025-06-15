@@ -12,6 +12,7 @@ GitHub: [github.com/halilsenaydin](https://github.com/halilsenaydin)
 ## Dependencies
 
 - ROS 2 (recommended [Iron](https://docs.ros.org/en/iron/Installation/Ubuntu-Install-Debs.html))
+- `Eclipse Paho MQTT C++ library`, `BlueZ Bluetooth libraries`, `Whisper`
 
 ## Package Overview
 
@@ -47,22 +48,28 @@ Classes that implement hardware-specific behaviors:
 - **Communication**:
 
   - [`BluetoothComm`](docs/BluetoothComm.md): Uses serial Bluetooth modules for command transmission.
+  - [`BluetoothAudioComm`](docs/BluetoothAudioComm.md): Handles audio command transmission using serial Bluetooth modules.
   - [`MqttComm`](docs/MqttComm.md): Communicates with external systems via MQTT.
   - [`SerialComm`](docs/SerialComm.md): Direct UART/USB serial communication with microcontrollers.
 
   **Note**: Each communication module includes a dedicated README file with setup instructions, configuration details, and usage examples. Please refer to them for comprehensive guidance.
+
+- **Controllers**:
+
+  - `PIDController`
+
+- **Screens**:
+
+  - `MqttNextionScreen`
 
 - **Sensors**:
 
   - `HCSR04Sensor`
   - `MqttDistanceSensor`
 
-- **Screens**:
+- **Speech Recognizers**:
 
-  - `MqttNextionScreen`
-
-- **Controllers**:
-  - `PIDController`
+  - [`WhisperSpeechRecognizer`](docs/WhisperSpeechRecognizer.md): C++ real-time speech-to-text wrapper.
 
 ### ROS Nodes (`nodes/`)
 
@@ -133,6 +140,22 @@ To launch the hardware system:
 ros2 launch mcqueen_hw bringup.launch.py
 ```
 
+### Launching Foxglove
+
+```bash
+ros2 run foxglove_bridge foxglove_bridge
+```
+
+#### Connect from Your Phone
+
+- Open a web browser on your phone.
+- Go to: [https://studio.foxglove.dev](https://studio.foxglove.dev)
+- In the top left corner, click **Open connection...**
+- Enter the WebSocket URL of your Raspberry Pi: `ws://<raspberrypi_ip>:8765`
+- Once connected, you should see your robot model in the **3D panel** if topics like `/robot_description`, `/tf`, and `/joint_states` are being published correctly.
+
 ## Screenshots
+
+### Foxglove Visualization
 
 ![Foxglove Visualization](docs/img/foxglove.png)

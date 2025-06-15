@@ -27,6 +27,7 @@
   <build_depend>control_msgs</build_depend>
   <build_depend>controller_manager</build_depend>
   <build_depend>controller_manager_msgs</build_depend>
+  <build_depend>foxglove_bridge</build_depend>
 
   <!-- Build export -->
   <build_export_depend>libpaho-mqttpp3-dev</build_export_depend>
@@ -49,6 +50,9 @@
   <exec_depend>control_msgs</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>controller_manager_msgs</exec_depend>
+  <exec_depend>foxglove_bridge</exec_depend>
+  
+  <depend>foxglove_bridge</depend>
 
   <!-- Test -->
   <test_depend>ament_lint_auto</test_depend>

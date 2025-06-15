@@ -1,3 +1,0 @@
-/Users/halil/workspace/src/mcqueen_hw/standalone/mqtt_comm/build/CMakeFiles/mqtt_comm.dir
-/Users/halil/workspace/src/mcqueen_hw/standalone/mqtt_comm/build/CMakeFiles/edit_cache.dir
-/Users/halil/workspace/src/mcqueen_hw/standalone/mqtt_comm/build/CMakeFiles/rebuild_cache.dir

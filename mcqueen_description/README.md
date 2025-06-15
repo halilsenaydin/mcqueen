@@ -92,6 +92,16 @@ Launches the URDF model along with the necessary nodes for robot visualization a
 ros2 launch mcqueen_description mcqueen.launch.py
 ```
 
+### Launching RViz2
+
+To visualize the robot with a predefined RViz2 configuration, run the following command:
+
+```bash
+rviz2 -d ~/workspace/src/mcqueen_teleop/config/mcqueen.rviz
+```
+
 ## Screenshots
+
+### Rviz2 Visualization
 
 ![Rviz2 Visualization](docs/img/rviz2.png)

@@ -15,6 +15,7 @@ find_package(std_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(custom_interfaces REQUIRED)
 find_package(hardware_interface REQUIRED)
+find_package(foxglove_bridge REQUIRED)
 
 # Find Paho MQTT C/C++ libraries
 find_path(PAHO_MQTT_CPP_INCLUDE_DIR NAMES mqtt/async_client.h)
@@ -26,6 +27,10 @@ find_path(PIGPIO_INCLUDE_DIR pigpio.h REQUIRED)
 
 # Pluginlib
 find_package(pluginlib REQUIRED)
+
+# Whisper.cpp
+find_package(PulseAudio REQUIRED)
+add_subdirectory(third_party/whisper.cpp)
 
 # Define platform-dependent GPIO support (libgpiod is Linux-only)
 if(UNIX AND NOT APPLE)
@@ -39,7 +44,10 @@ else()
 endif()
 
 # Add include directories
-include_directories(include)
+include_directories(
+  include
+  third_party/whisper.cpp/include
+)
 
 if(USE_GPIOD)
   include_directories(${GPIOD_INCLUDE_DIRS})

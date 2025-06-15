@@ -16,20 +16,21 @@ GitHub: [github.com/halilsenaydin](https://github.com/halilsenaydin)
 
 This workspace includes the following packages:
 
-### [mcqueen_hw](./mcqueen_hw/README.md)
+### [mcqueen_hw](./mcqueen_hw)
 
 Hardware abstraction and control package. Provides modular interfaces and concrete implementations for various sensors, actuators, and communication methods.
 
 - **Interfaces (abstract/):**  
-  `IBuzzer`, `ICommDevice`, `IController`, `IDistanceSensor`, `IScreen`
+  `IBuzzer`, `ICommDevice`, `IController`, `IDistanceSensor`, `IScreen`, `ISpeechRecognizer`
 
 - **Implementations (concrete/):**
 
-  - Communication: `BluetoothComm`, `MqttComm`, `SerialComm`
-  - Sensors: `HCSR04Sensor`, `MqttDistanceSensor`
-  - Screens: `MqttNextionScreen`
   - Buzzers: `ActiveBuzzer`, `PassiveBuzzer`, `MqttBuzzer`
+  - Communication: `BluetoothComm`, `BluwtoothAudioComm`, `MqttComm`, `SerialComm`
   - Controllers: `PIDController`
+  - Screens: `MqttNextionScreen`
+  - Sensors: `HCSR04Sensor`, `MqttDistanceSensor`
+  - Speech Recognizers: `WhisperSpeechRecognizer`
 
 - **ROS Nodes (nodes/):**  
   Services and publishers for sensors and actuators:  
@@ -40,7 +41,7 @@ Hardware abstraction and control package. Provides modular interfaces and concre
 
 [See mcqueen_hw README](./mcqueen_hw/README.md)
 
-### [mcqueen_teleop](./mcqueen_teleop/README.md)
+### [mcqueen_teleop](./mcqueen_teleop)
 
 Provides a Flask-based web interface and voice assistant integration for teleoperating the robot over a local network (Wi-Fi or LAN). Publishes velocity commands and offers service-based control for other components (buzzer, screen, etc.).
 
@@ -51,7 +52,7 @@ Provides a Flask-based web interface and voice assistant integration for teleope
 
 [See mcqueen_teleop README](./mcqueen_teleop/README.md)
 
-### [mcqueen_description](./mcqueen_description/README.md)
+### [mcqueen_description](./mcqueen_description)
 
 Contains the URDF model of the McQueen robot and associated launch files.
 
@@ -61,7 +62,7 @@ Contains the URDF model of the McQueen robot and associated launch files.
 
 [See mcqueen_description README](./mcqueen_description/README.md)
 
-### [custom_interfaces](./custom_interfaces/README.md)
+### [custom_interfaces](./custom_interfaces)
 
 Custom ROS 2 interface definitions used across the workspace.
 
@@ -84,3 +85,49 @@ Use Git to download the workspace from the repository:
 ```bash
 git clone https://github.com/halilsenaydin/mcqueen
 ```
+
+## Screenshots
+
+### MCQueen Description
+
+#### Rviz2 Visualization
+
+![Rviz2 Visualization](mcqueen_description/docs/img/rviz2.png)
+
+### MCQueen HW
+
+#### Foxglove Visualization
+
+![Foxglove Visualization](mcqueen_hw/docs/img/foxglove.png)
+
+### MCQueen Teleop
+
+#### Dashboard
+
+![Dashboard](mcqueen_teleop/docs/img/1.png)
+
+#### Voice Assistant
+
+![Voice Assistant](mcqueen_teleop/docs/img/2.png)
+
+#### Control Interface
+
+![Control Interface 1](mcqueen_teleop/docs/img/3.png)
+
+![Control Interface 2](mcqueen_teleop/docs/img/4.png)
+
+#### Distance Monitor
+
+![Distance Monitor](mcqueen_teleop/docs/img/5.png)
+
+#### Control Buzzer
+
+![Control Buzzer](mcqueen_teleop/docs/img/6.png)
+
+#### Control Screen
+
+![Control Screen](mcqueen_teleop/docs/img/7.png)
+
+#### Control Headlight
+
+![Control Headlight](mcqueen_teleop/docs/img/8.png)
