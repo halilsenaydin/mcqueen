@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>McQueen Teleop | Distance Monitor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/mcqueen_teleop_distance.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Distance Monitor</h1>
+    <div class="table-container">
+      <table id="distance-table" aria-label="Distance measurements">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Distance (m)</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <a
+      href="{{ url_for('index') }}"
+      class="back-button"
+      role="button"
+      aria-label="Return to Pit Stop"
+      ><i class="fa-solid fa-chevron-left"></i> Return to Pit Stop</a
+    >
+
+    <script src="{{ url_for('static', filename='js/mcqueen_teleop_distance.js') }}"></script>
+  </body>
+</html>

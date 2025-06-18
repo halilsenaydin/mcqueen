@@ -1,0 +1,18 @@
+<package format="3">
+  <name>mcqueen_description</name>
+  <version>0.0.1</version>
+  <description>MCQueen robot description</description>
+  <maintainer email="halilsenaydin@gmail.com">Halil İbrahim ŞENAYDIN</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>rosidl_default_generators</build_depend>
+  <build_depend>xacro</build_depend>
+
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

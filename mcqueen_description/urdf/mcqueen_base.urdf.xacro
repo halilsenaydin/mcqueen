@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="mcqueen_base">
+
+  <xacro:macro name="mcqueen_base" params="">
+  
+    <!-- Body -->
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/mcqueen_no_wheel.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/mcqueen_no_wheel.dae"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1.0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                 iyy="0.01" iyz="0.0"
+                 izz="0.01"/>
+      </inertial>
+    </link>
+
+    <!-- Rear Right Wheel -->
+    <link name="rear_right_wheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/wheel.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="rear_right_wheel_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="rear_right_wheel"/>
+      <origin xyz="0.886802 1.30844 0.436127" rpy="0 3.1416 0"/> 
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <!-- Rear Left Wheel -->
+    <link name="rear_left_wheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/wheel.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="rear_left_wheel_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="rear_left_wheel"/>
+      <origin xyz="-0.886802 1.30844 0.436127" rpy="0 0 0"/> 
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <!-- Front Right Wheel -->
+    <link name="front_right_wheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/wheel.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="front_right_wheel_joint" type="revolute">
+      <parent link="base_link"/>
+      <child link="front_right_wheel"/>
+      <origin xyz="0.886802 -1.30844 0.436127" rpy="0 3.1416 0"/> 
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.785" upper="0.785" effort="10.0" velocity="1.0"/>
+    </joint>
+
+    <!-- Front Left Wheel -->
+    <link name="front_left_wheel">
+      <visual>
+        <geometry>
+          <mesh filename="package://mcqueen_description/meshes/wheel.dae"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="front_left_wheel_joint" type="revolute">
+      <parent link="base_link"/>
+      <child link="front_left_wheel"/>
+      <origin xyz="-0.886802 -1.30844 0.436127" rpy="0 0 0"/> 
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.785" upper="0.785" effort="10.0" velocity="1.0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

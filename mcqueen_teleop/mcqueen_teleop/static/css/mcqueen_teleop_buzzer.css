@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(to right, #b71c1c, #d32f2f);
+    color: #ffb74d;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 3rem 1rem;
+    text-align: center;
+    user-select: none;
+}
+
+h1 {
+    color: #ffb74d;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.toggle-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.toggle {
+    cursor: pointer;
+    height: 40px;
+    position: relative;
+    width: 80px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider {
+    background-color: rgba(255, 183, 77, 0.4);
+    border-radius: 40px;
+    box-shadow: 0 0 8px rgba(255, 183, 77, 0.5);
+    inset: 0;
+    position: absolute;
+    transition: background-color 0.3s ease;
+}
+
+.slider::before {
+    background-color: #ffb74d;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ffb74d;
+    content: '';
+    height: 32px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 32px;
+}
+
+input:checked+.slider {
+    background-color: #ffb74d;
+    box-shadow: 0 0 15px #ffb74d;
+}
+
+input:checked+.slider::before {
+    background-color: #fff8e1;
+    box-shadow: 0 0 15px #fff8e1;
+    transform: translateX(40px);
+}
+
+#status-text {
+    color: #ffb74d;
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-width: 150px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+#status-text.off {
+    color: rgba(242, 246, 107, 0.6);
+    text-shadow: none;
+}
+
+.back-button {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 20px;
+    color: #ffb74d;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.back-button:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 8px 20px #ffb74d;
+    color: #7b0000;
+}

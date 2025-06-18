@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>McQueen Teleop Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>McQueen Teleop Dashboard</h1>
+    <div class="nav-grid">
+      <a href="{{ url_for('voice_assistant') }}" class="nav-card">
+        <i class="fas fa-robot"></i>
+        <span>Voice Assistant</span>
+      </a>
+      <a href="{{ url_for('control_panel') }}" class="nav-card">
+        <i class="fas fa-gamepad"></i>
+        <span>Control Dashboard</span>
+      </a>
+      <a href="{{ url_for('distance_monitor') }}" class="nav-card">
+        <i class="fas fa-ruler-vertical"></i>
+        <span>Distance Monitor</span>
+      </a>
+      <a href="{{ url_for('buzzer_control') }}" class="nav-card">
+        <i class="fas fa-bell"></i>
+        <span>Control Buzzer</span>
+      </a>
+      <a href="{{ url_for('screen_control') }}" class="nav-card">
+        <i class="fas fa-tv"></i>
+        <span>Control Screen</span>
+      </a>
+      <a href="{{ url_for('headlight_control') }}" class="nav-card">
+        <i class="fas fa-lightbulb"></i>
+        <span>Control Headlight</span>
+      </a>
+    </div>
+  </body>
+</html>

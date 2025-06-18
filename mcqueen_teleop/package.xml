@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mcqueen_teleop</name>
+  <version>1.0.0</version>
+  <description>
+    A ROS 2 package providing web-based and voice-assisted remote control for mobile robots, 
+    with support for sensor feedback and actuator control over a local network.
+  </description>
+  <maintainer email="halilsenaydin@gmail.com">Halil İbrahim ŞENAYDIN</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- ROS 2 Dependencies -->
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>custom_interfaces</depend>
+
+  <!-- pip Dependencies -->
+  <exec_depend>python3-flask</exec_depend>
+  <exec_depend>python3-paho-mqtt</exec_depend>
+  <exec_depend>python3-spacy</exec_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
