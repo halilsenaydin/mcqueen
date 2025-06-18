@@ -1,0 +1,67 @@
+buzzer_service:
+  ros__parameters:
+    comm:
+      mqtt:
+        url: 'tcp://192.168.0.28:1883'
+    sensor:
+      buzzer:
+        service_name: 'buzzer'
+        comm:
+          client_id: 'mcqueen_buzzer_server'
+          target_topic_name: 'sensor/buzzer'
+
+distance_publisher:
+  ros__parameters:
+    comm:
+      mqtt:
+        url: 'tcp://192.168.0.28:1883'
+    sensor:
+      laser:
+        angle_increment: 0.0
+        angle_max: 0.0
+        angle_min: 0.0
+        comm:
+          client_id: 'mcqueen_distance_publisher'
+          target_topic_name: 'sensor/distance'
+        frame_id: 'laser_frame'
+        num_readings: 1
+        range_max: 4.0
+        range_min: 0.02
+        scan_time: 0.1
+        time_increment: 0.0
+        topic_name: '/scan'
+
+motor_controller:
+  ros__parameters:
+    comm:
+      mqtt:
+        url: 'tcp://192.168.0.28:1883'
+    sensor:
+      motor:
+        comm:
+          client_id: 'mcqueen_motor_controller'
+          target_topic_name: 'motor/command'
+        topic_name: '/cmd_vel'
+
+mcqueen_system:
+  ros__parameters:
+    comm:
+      mqtt:
+        url: 'tcp://192.168.0.28:1883'
+    sensor:
+      motor:
+        comm:
+          client_id: 'mcqueen_system'
+          target_topic_name: 'motor/command'
+
+screen_service:
+  ros__parameters:
+    comm:
+      mqtt:
+        url: 'tcp://192.168.0.28:1883'
+    output:
+      screen:
+        service_name: 'screen'
+        comm:
+          client_id: 'mcqueen_screen_server'
+          target_topic_name: 'output/screen'

@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(to right, #b71c1c, #d32f2f);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    color: #ffb74d;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.screen-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 auto 4rem auto;
+    max-width: 900px;
+}
+
+.screen-card {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.6);
+    cursor: pointer;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    width: 180px;
+}
+
+.screen-card:hover {
+    box-shadow: 0 6px 15px rgba(255, 183, 77, 0.8);
+    transform: translateY(-8px);
+}
+
+.screen-card img {
+    border-radius: 12px;
+    border: 2px solid transparent;
+    margin-bottom: 0.8rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.screen-card.selected img {
+    border-color: #ffb74d;
+}
+
+.screen-card span {
+    color: #ffb74d;
+    font-weight: 600;
+}
+
+#response-msg {
+    color: #ffb74d;
+    display: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    min-height: 1.2rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.back-button {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 20px;
+    color: #ffb74d;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.back-button:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 8px 20px #ffb74d;
+    color: #7b0000;
+}

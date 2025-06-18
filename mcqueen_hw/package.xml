@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mcqueen_hw</name>
+  <version>1.0.0</version>
+  <description>Hardware abstraction package for McQueen robot</description>
+  <maintainer email="halilsenaydin@gmail.com">Halil İbrahim ŞENAYDIN</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Build tool -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Build -->
+  <build_depend>rclcpp</build_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>libpaho-mqtt-dev</build_depend>
+  <build_depend>libpaho-mqttpp3-dev</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>pluginlib</build_depend>
+
+  <build_depend>ros2_control</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>controller_interface</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>controller_manager_msgs</build_depend>
+
+  <!-- Build export -->
+  <build_export_depend>libpaho-mqttpp3-dev</build_export_depend>
+  <build_export_depend>libpaho-mqtt-dev</build_export_depend>
+
+  <!-- Exec -->
+  <exec_depend>rclcpp</exec_depend>
+
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>libpaho-mqtt-dev</exec_depend>
+  <exec_depend>libpaho-mqttpp3-dev</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  
+  <exec_depend>ackermann_steering_controller</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>controller_interface</exec_depend>
+  <exec_depend>controller_manager_msgs</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+
+  <depend>foxglove_bridge</depend>
+
+  <!-- Test -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="mcqueen_full" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="mcqueen_base.urdf.xacro"/>
+  <xacro:include filename="mcqueen_hw_interface.urdf.xacro"/>
+
+  <xacro:mcqueen_base/>
+  <xacro:mcqueen_hw_interface/>
+
+</robot>

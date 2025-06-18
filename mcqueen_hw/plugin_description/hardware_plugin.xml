@@ -1,0 +1,7 @@
+<library path="mcqueen_hw">
+  <class name="McQueenSystem"
+         type="McQueenSystem"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>Hardware interface for McQueen robot using MQTT</description>
+  </class>
+</library>
