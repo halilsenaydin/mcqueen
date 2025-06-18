@@ -27,7 +27,6 @@
   <build_depend>control_msgs</build_depend>
   <build_depend>controller_manager</build_depend>
   <build_depend>controller_manager_msgs</build_depend>
-  <build_depend>foxglove_bridge</build_depend>
 
   <!-- Build export -->
   <build_export_depend>libpaho-mqttpp3-dev</build_export_depend>
@@ -44,14 +43,15 @@
   <exec_depend>std_srvs</exec_depend>
   <exec_depend>pluginlib</exec_depend>
   
-  <exec_depend>ros2_control</exec_depend>
-  <exec_depend>hardware_interface</exec_depend>
-  <exec_depend>controller_interface</exec_depend>
+  <exec_depend>ackermann_steering_controller</exec_depend>
   <exec_depend>control_msgs</exec_depend>
-  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>controller_interface</exec_depend>
   <exec_depend>controller_manager_msgs</exec_depend>
-  <exec_depend>foxglove_bridge</exec_depend>
-  
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+
   <depend>foxglove_bridge</depend>
 
   <!-- Test -->

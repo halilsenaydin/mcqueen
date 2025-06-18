@@ -2,12 +2,12 @@ import os, time, threading
 
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist, TwistStamped
-from std_msgs.msg import Header
+from geometry_msgs.msg import TwistStamped
 from sensor_msgs.msg import LaserScan
 from custom_interfaces.srv import Screen, Buzzer
 from mcqueen_teleop.voice_assistant.command_processor import CommandProcessor
 
+import math
 from flask import Flask, render_template, request, jsonify
 import paho.mqtt.publish as publish
 
@@ -32,6 +32,8 @@ SCREEN_SERVICE_NAME = "screen"
 # Global variables for controlling the robot
 linear_x = 0.0
 angular_z = 0.0
+previous_linear_x = 0.0
+previous_angular_z = 0
 gear = 0  # 0: D, 1: R
 
 # Global variables for distance monitoring
@@ -64,6 +66,39 @@ def mcqueen_stop():
     angular_z = 0.0
 
     return "McQueen stop"
+
+
+def mcqueen_change_screen_by_movement():
+    global linear_x, angular_z, previous_linear_x, previous_angular_z
+
+    def encode_screen_command(linear_x: float, angular_z: float) -> str:
+        pic_id = "0"
+
+        if linear_x == 0.0:
+            if angular_z == 0.0:
+                pic_id = "0"  # Opened
+            elif angular_z > 0.0:
+                pic_id = "2"  # Opened Look Right
+            else:
+                pic_id = "3"  # Opened Look Left
+        else:
+            if angular_z == 0.0:
+                pic_id = "1"  # Blink
+            elif angular_z > 0.0:
+                pic_id = "5"  # Blink Look Right
+            else:
+                pic_id = "4"  # Blink Look Left
+
+        return pic_id
+
+    if not math.isclose(linear_x, previous_linear_x) or not math.isclose(
+        angular_z, previous_angular_z
+    ):
+        pic_id = encode_screen_command(linear_x, angular_z)
+        screen_service_client.call_service(pic_id)
+
+        previous_linear_x = linear_x
+        previous_angular_z = angular_z
 
 
 def mcqueen_move_forward():
@@ -126,6 +161,8 @@ class CmdVelWebNode(Node):
 
         self._publisher.publish(msg)
         self.get_logger().info(f"Published: linear_x={linear_x}, angular_z={angular_z}")
+
+        mcqueen_change_screen_by_movement()
 
 
 # DistanceListener is a ROS 2 node that subscribes to the LaserScan topic

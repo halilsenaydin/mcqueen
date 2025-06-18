@@ -133,19 +133,19 @@ ros2 run mcqueen_teleop web_server
 Once the server is running, open your browser and go to:
 
 ```bash
-http://<your-ip>:5050
+https://<your-ip>:5050
 ```
 
 Replace `<your-ip>` with the IP address of the machine running the server. For example:
 
 ```bash
-http://192.168.0.36:5050
+https://192.168.0.36:5050
 ```
 
 To make sure the velocity commands are being published, you can echo the `/ackermann_cont/reference` topic in another terminal:
 
 ```bash
-ros2 topic echo /ackermann_cont/referencemd_vel
+ros2 topic echo /ackermann_cont/reference
 ```
 
 This will display real-time `geometry_msgs/msg/Twist` messages being sent from the web interface.
